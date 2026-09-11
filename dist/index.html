@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>velyB 국내·글로벌 마케팅 대시보드</title>
+  <meta name="description" content="velyB 국내·글로벌 마케팅 광고비, 에이전시 및 수수료 현황">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231a365d'/%3E%3Cpath d='M17 16h18c8 0 13 4 13 10 0 4-2 7-6 9 5 1 8 5 8 10 0 8-6 12-16 12H17V16zm11 9v7h7c3 0 5-1 5-4s-2-3-5-3h-7zm0 15v8h8c4 0 6-1 6-4s-2-4-6-4h-8z' fill='white'/%3E%3C/svg%3E">
+  <style>
+    :root{--navy:#16324f;--blue:#2878b7;--sky:#eaf4fb;--ink:#182536;--muted:#65758b;--line:#dce5ed;--white:#fff;--orange:#f09445;--green:#2d8a66;--red:#ca5b5b}
+    *{box-sizing:border-box} body{margin:0;background:#f3f7fa;color:var(--ink);font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",sans-serif}
+    header{background:linear-gradient(122deg,#102a43 0%,#1d4f76 68%,#2878b7 100%);color:white;padding:28px 34px 74px}
+    .top{max-width:1280px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px}.mark{width:40px;height:40px;border-radius:12px;background:white;color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:21px}
+    h1{font-size:25px;margin:0 0 5px;letter-spacing:-.03em}.sub{font-size:14px;color:#d7e8f4}
+    .source{color:white;border:1px solid rgba(255,255,255,.38);border-radius:10px;padding:10px 14px;text-decoration:none;font-size:14px;background:rgba(255,255,255,.08)}
+    main{max-width:1280px;margin:-48px auto 56px;padding:0 24px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .card,.panel{background:var(--white);border:1px solid var(--line);box-shadow:0 8px 25px rgba(24,48,73,.07);border-radius:16px}
+    .card{padding:20px 22px}.eyebrow{font-size:13px;color:var(--muted);margin-bottom:10px}.metric{font-size:28px;font-weight:800;letter-spacing:-.04em}.metric small{font-size:14px;font-weight:600;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-top:16px}.panel{padding:22px}.panel h2{font-size:18px;margin:0 0 5px}.caption{font-size:13px;color:var(--muted);margin-bottom:22px}
+    .chart{height:270px;display:flex;align-items:flex-end;gap:11px;padding:10px 2px 0;border-bottom:1px solid var(--line)}
+    .bar-wrap{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:7px;min-width:0}.bar-value{font-size:11px;color:var(--muted);white-space:nowrap}
+    .bar{width:min(38px,76%);height:var(--h);min-height:3px;background:linear-gradient(#4b9bd3,#2f75b5);border-radius:7px 7px 2px 2px;transition:.2s}.bar:hover{filter:brightness(.92);transform:translateY(-2px)}.month{font-size:12px;color:#526579}
+    .rank{display:grid;gap:12px}.rank-row{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #edf1f5}.rank-row:last-child{border:0}
+    .rank-no{width:27px;height:27px;border-radius:8px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}.rank-name{font-weight:700}.rank-sub{font-size:12px;color:var(--muted);margin-top:3px}.money{font-weight:800}
+    .wide{margin-top:16px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:900px}th{background:#f0f5f9;color:#42566b;text-align:left;font-size:13px;padding:12px 14px;white-space:nowrap}td{font-size:14px;padding:13px 14px;border-top:1px solid #e7edf2;vertical-align:top}tbody tr:hover{background:#f8fbfd}
+    .chip{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:var(--sky);color:#26668f;font-size:12px;font-weight:700}.chip.green{background:#e9f5ef;color:var(--green)}.chip.orange{background:#fff1e5;color:#a65b19}.chip.gray{background:#eff2f5;color:#667382}
+    footer{max-width:1280px;margin:auto;padding:0 24px 34px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between}
+    @media(max-width:900px){header{padding:22px 22px 68px}.top{align-items:flex-start}.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.chart{height:240px}.bar-value{display:none}}
+    @media(max-width:560px){main{padding:0 14px}.cards{grid-template-columns:1fr 1fr;gap:10px}.card{padding:16px}.metric{font-size:22px}.source{display:none}h1{font-size:20px}.panel{padding:17px}.chart{gap:5px}.month{font-size:11px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top">
+      <div class="brand"><div class="mark">B</div><div><h1>국내·글로벌 마케팅 대시보드</h1><div class="sub">velyB 마케팅 운영 현황</div></div></div>
+      <a class="source" href="https://docs.google.com/spreadsheets/d/1cN7YKgH6yaiEGx78Lrk6VrBeeupZVx_NxuSbOtFfbdY/edit" target="_blank" rel="noopener">원본 구글시트 열기</a>
+    </div>
+  </header>
+  <main>
+    <section class="cards" aria-label="핵심 지표">
+      <article class="card"><div class="eyebrow">2026년 누적 광고비</div><div class="metric">368,839,723<small> 원</small></div></article>
+      <article class="card"><div class="eyebrow">광고비 집행 내역</div><div class="metric">91<small> 건</small></div></article>
+      <article class="card"><div class="eyebrow">등록 에이전시</div><div class="metric">12<small> 개</small></div></article>
+      <article class="card"><div class="eyebrow">수수료 정책</div><div class="metric">12<small> 건</small></div></article>
+    </section>
+    <section class="grid">
+      <article class="panel">
+        <h2>월별 광고비</h2><div class="caption">1월부터 9월까지 집행액, 단위 백만원</div>
+        <div class="chart" role="img" aria-label="월별 광고비 막대그래프">
+          <div class="bar-wrap"><div class="bar-value">32.4</div><div class="bar" style="--h:60%"></div><div class="month">1월</div></div>
+          <div class="bar-wrap"><div class="bar-value">7.0</div><div class="bar" style="--h:13%"></div><div class="month">2월</div></div>
+          <div class="bar-wrap"><div class="bar-value">53.4</div><div class="bar" style="--h:98%"></div><div class="month">3월</div></div>
+          <div class="bar-wrap"><div class="bar-value">43.2</div><div class="bar" style="--h:79%"></div><div class="month">4월</div></div>
+          <div class="bar-wrap"><div class="bar-value">47.9</div><div class="bar" style="--h:88%"></div><div class="month">5월</div></div>
+          <div class="bar-wrap"><div class="bar-value">46.0</div><div class="bar" style="--h:85%"></div><div class="month">6월</div></div>
+          <div class="bar-wrap"><div class="bar-value">54.4</div><div class="bar" style="--h:100%"></div><div class="month">7월</div></div>
+          <div class="bar-wrap"><div class="bar-value">32.5</div><div class="bar" style="--h:60%"></div><div class="month">8월</div></div>
+          <div class="bar-wrap"><div class="bar-value">52.0</div><div class="bar" style="--h:96%;background:linear-gradient(#f6b36f,#ef8f3e)"></div><div class="month">9월</div></div>
+        </div>
+      </article>
+      <article class="panel">
+        <h2>광고비 상위 월</h2><div class="caption">누적 집행액 기준</div>
+        <div class="rank">
+          <div class="rank-row"><div class="rank-no">1</div><div><div class="rank-name">7월</div><div class="rank-sub">17건 집행</div></div><div class="money">54,423,382원</div></div>
+          <div class="rank-row"><div class="rank-no">2</div><div><div class="rank-name">3월</div><div class="rank-sub">11건 집행</div></div><div class="money">53,389,136원</div></div>
+          <div class="rank-row"><div class="rank-no">3</div><div><div class="rank-name">9월</div><div class="rank-sub">10건 집행</div></div><div class="money">52,017,900원</div></div>
+          <div class="rank-row"><div class="rank-no">4</div><div><div class="rank-name">5월</div><div class="rank-sub">12건 집행</div></div><div class="money">47,860,693원</div></div>
+        </div>
+      </article>
+    </section>
+    <section class="panel wide">
+      <h2>글로벌 에이전시 진행현황</h2><div class="caption">계약 기간과 운영 범위 기준</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>업체명</th><th>국가</th><th>해당 지점</th><th>플랫폼</th><th>수수료</th><th>계약 종료일</th><th>상태</th></tr></thead>
+          <tbody>
+            <tr><td><strong>웨이브</strong></td><td>중국/대만</td><td>명동점</td><td>샤오홍슈, 웨이보, 인스타, 메이투안</td><td>10%</td><td>2026-11-30</td><td><span class="chip green">진행</span></td></tr>
+            <tr><td><strong>웨이브</strong></td><td>중국/대만</td><td>홍대점</td><td>샤오홍슈, 웨이보, 인스타, 메이투안</td><td>10%</td><td>2028-05-31</td><td><span class="chip green">진행</span></td></tr>
+            <tr><td><strong>엠제이에프엘비</strong></td><td>중국</td><td>글로벌 전지점</td><td>샤오홍슈</td><td>12%</td><td>2026-10-26</td><td><span class="chip green">진행</span></td></tr>
+            <tr><td><strong>웰픽</strong></td><td>영어권</td><td>글로벌 전지점</td><td>인스타그램</td><td>-</td><td>2026-09-20</td><td><span class="chip orange">만료 임박</span></td></tr>
+            <tr><td><strong>강남언니</strong></td><td>국내/일본</td><td>명동점</td><td>강남언니</td><td>-</td><td>월 단위</td><td><span class="chip">정기 갱신</span></td></tr>
+            <tr><td><strong>어포메이션</strong></td><td>일본</td><td>강남역·명동·홍대·부산서면</td><td>인스타, X</td><td>-</td><td>3개월 단위</td><td><span class="chip">정기 갱신</span></td></tr>
+            <tr><td><strong>씨유이</strong></td><td>중국/대만</td><td>강남역·제주·대구·부산서면</td><td>샤오홍슈, 메이투안</td><td>12%</td><td>2026-06-30</td><td><span class="chip gray">계약일 확인</span></td></tr>
+            <tr><td><strong>제주브로</strong></td><td>중국/대만</td><td>제주점</td><td>X</td><td>13%</td><td>2026-07-15</td><td><span class="chip gray">계약일 확인</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer><span>2026.09.11 기준</span><span>회사 내부용</span></footer>
+</body>
+</html>
